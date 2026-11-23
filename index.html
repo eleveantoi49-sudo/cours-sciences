@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail Pédagogique — Sciences & Mathématiques</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; padding: 3rem 1.5rem; text-align: center; }
+        header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        header p { opacity: 0.9; max-width: 650px; margin: 0 auto; }
+        .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem; padding: 1.5rem; background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 10; }
+        .filter-btn { padding: 0.5rem 1.1rem; border: 1px solid #cbd5e1; border-radius: 999px; background: white; cursor: pointer; font-weight: 600; color: var(--text); transition: 0.2s; }
+        .filter-btn:hover, .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        main { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+        section { margin-bottom: 3rem; }
+        h2 { font-size: 1.5rem; color: var(--primary); border-left: 4px solid var(--accent); padding-left: 0.75rem; margin-bottom: 1.25rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--card-bg); border-radius: 10px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); }
+        .badge { display: inline-block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 4px; margin-bottom: 0.75rem; width: fit-content; }
+        .badge-dias { background: #fef3c7; color: #b45309; }
+        .badge-pdf { background: #fee2e2; color: #b91c1c; }
+        .badge-schema { background: #dcfce7; color: #15803d; }
+        .badge-video { background: #e0e7ff; color: #4338ca; }
+        .card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .card p { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.25rem; }
+        .btn { display: inline-block; text-align: center; background: var(--accent); color: white; text-decoration: none; padding: 0.6rem 1rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+        .btn:hover { background: var(--primary); }
+        .schema-img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 0.75rem; background: #e2e8f0; }
+        footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid #e2e8f0; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sciences & Mathématiques — Espace Cours</h1>
+    <p>Ressources pédagogiques, supports de cours, diaporamas, schémas explicatifs et capsules vidéo.</p>
+</header>
+
+<div class="filters">
+    <button class="filter-btn active" onclick="filtrer('tous', this)">Tout voir</button>
+    <button class="filter-btn" onclick="filtrer('dias', this)">📊 Diaporamas</button>
+    <button class="filter-btn" onclick="filtrer('pdf', this)">📄 Fiches de cours</button>
+    <button class="filter-btn" onclick="filtrer('schema', this)">📐 Visuels & Schémas</button>
+    <button class="filter-btn" onclick="filtrer('video', this)">🎬 Vidéos & Liens</button>
+</div>
+
+<main>
+    <section>
+        <h2>Chapitre 1 : Fonctions et Analyse (Exemple)</h2>
+        <div class="grid">
+            <article class="card" data-type="dias">
+                <div>
+                    <span class="badge badge-dias">Diaporama (PPT / Slides)</span>
+                    <h3>Introduction aux dérivées</h3>
+                    <p>Support projeté en classe avec graphiques animés et exemples pas à pas.</p>
+                </div>
+                <a href="fichiers/chap1-derivees.pdf" target="_blank" class="btn">Ouvrir les dias</a>
+            </article>
+
+            <article class="card" data-type="pdf">
+                <div>
+                    <span class="badge badge-pdf">Fiche de cours (PDF)</span>
+                    <h3>Synthèse & Exercices corrigés</h3>
+                    <p>Formulaire complet des dérivées usuelles et 15 exercices d'application.</p>
+                </div>
+                <a href="fichiers/fiche-derivees.pdf" target="_blank" class="btn">Télécharger le PDF</a>
+            </article>
+
+            <article class="card" data-type="schema">
+                <div>
+                    <span class="badge badge-schema">Visuel & Schéma</span>
+                    <h3>Interprétation géométrique</h3>
+                    <img src="images/tangente.png" alt="Schéma tangente" class="schema-img">
+                    <p>Visualisation de la tangente en un point et du taux d'accroissement.</p>
+                </div>
+                <a href="images/tangente.png" target="_blank" class="btn">Agrandir le schéma</a>
+            </article>
+
+            <article class="card" data-type="video">
+                <div>
+                    <span class="badge badge-video">Capsule Vidéo</span>
+                    <h3>Comprendre la limite en 5 min</h3>
+                    <p>Explication vidéo externe et simulation interactive GeoGebra.</p>
+                </div>
+                <a href="https://geogebra.org" target="_blank" class="btn">Voir la ressource</a>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 — Espace Pédagogique • Créé pour le partage de ressources éducatives</p>
+</footer>
+
+<script>
+    function filtrer(categorie, bouton) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        bouton.classList.add('active');
+        document.querySelectorAll('.card').forEach(carte => {
+            if (categorie === 'tous' || carte.dataset.type === categorie) {
+                carte.style.display = 'flex';
+            } else {
+                carte.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
