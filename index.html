@@ -36,7 +36,7 @@
         .card p { font-size: 0.92rem; color: var(--muted); margin-bottom: 1.25rem; }
         .btn { display: inline-block; text-align: center; background: var(--accent); color: white; text-decoration: none; padding: 0.6rem 1rem; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
         .btn:hover { background: var(--primary); }
-        .schema-img { width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 0.75rem; background: #e2e8f0; }
+        .schema-img { width: 100%; height: 200px; object-fit: cover; border-radius: 6px; margin-bottom: 0.75rem; background: #e2e8f0; border: 1px solid #cbd5e1; }
         footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid #e2e8f0; margin-top: 3rem; }
     </style>
 </head>
@@ -49,49 +49,118 @@
 
 <div class="filters">
     <button class="filter-btn active" onclick="filtrer('tous', this)">Tout voir</button>
+    <button class="filter-btn" onclick="filtrer('schema', this)">📐 Visuels & Schémas</button>
     <button class="filter-btn" onclick="filtrer('dias', this)">📊 Diaporamas</button>
     <button class="filter-btn" onclick="filtrer('pdf', this)">📄 Fiches de cours</button>
-    <button class="filter-btn" onclick="filtrer('schema', this)">📐 Visuels & Schémas</button>
     <button class="filter-btn" onclick="filtrer('video', this)">🎬 Vidéos & Liens</button>
 </div>
 
 <main>
+    <!-- SECTION VISUELS & SCHÉMAS (TES 7 IMAGES INTÉGRÉES) -->
     <section>
-        <h2>Chapitre 1 : Fonctions et Analyse (Exemple)</h2>
+        <h2>📐 Visuels & Schémas</h2>
         <div class="grid">
-            <article class="card" data-type="dias">
+            
+            <article class="card" data-type="schema">
                 <div>
-                    <span class="badge badge-dias">Diaporama (PPT / Slides)</span>
-                    <h3>Introduction aux dérivées</h3>
-                    <p>Support projeté en classe avec graphiques animés et exemples pas à pas.</p>
+                    <span class="badge badge-schema">Visuel & Schéma</span>
+                    <h3>Schéma pédagogique 1</h3>
+                    <img src="Screenshot_20261123-190602.jpg" alt="Visuel 1" class="schema-img">
+                    <p>Support visuel et illustration de cours.</p>
                 </div>
-                <a href="fichiers/chap1-derivees.pdf" target="_blank" class="btn">Ouvrir les dias</a>
-            </article>
-
-            <article class="card" data-type="pdf">
-                <div>
-                    <span class="badge badge-pdf">Fiche de cours (PDF)</span>
-                    <h3>Synthèse & Exercices corrigés</h3>
-                    <p>Formulaire complet des dérivées usuelles et 15 exercices d'application.</p>
-                </div>
-                <a href="fichiers/fiche-derivees.pdf" target="_blank" class="btn">Télécharger le PDF</a>
+                <a href="Screenshot_20261123-190602.jpg" target="_blank" class="btn">Agrandir le visuel</a>
             </article>
 
             <article class="card" data-type="schema">
                 <div>
                     <span class="badge badge-schema">Visuel & Schéma</span>
-                    <h3>Interprétation géométrique</h3>
-                    <img src="images/tangente.png" alt="Schéma tangente" class="schema-img">
-                    <p>Visualisation de la tangente en un point et du taux d'accroissement.</p>
+                    <h3>Schéma pédagogique 2</h3>
+                    <img src="Screenshot_20261123-190612.jpg" alt="Visuel 2" class="schema-img">
+                    <p>Support visuel et illustration de cours.</p>
                 </div>
-                <a href="images/tangente.png" target="_blank" class="btn">Agrandir le schéma</a>
+                <a href="Screenshot_20261123-190612.jpg" target="_blank" class="btn">Agrandir le visuel</a>
+            </article>
+
+            <article class="card" data-type="schema">
+                <div>
+                    <span class="badge badge-schema">Visuel & Schéma</span>
+                    <h3>Schéma pédagogique 3</h3>
+                    <img src="Screenshot_20261123-190623.jpg" alt="Visuel 3" class="schema-img">
+                    <p>Support visuel et illustration de cours.</p>
+                </div>
+                <a href="Screenshot_20261123-190623.jpg" target="_blank" class="btn">Agrandir le visuel</a>
+            </article>
+
+            <article class="card" data-type="schema">
+                <div>
+                    <span class="badge badge-schema">Visuel & Schéma</span>
+                    <h3>Schéma pédagogique 4</h3>
+                    <img src="Screenshot_20261123-190659.jpg" alt="Visuel 4" class="schema-img">
+                    <p>Support visuel et illustration de cours.</p>
+                </div>
+                <a href="Screenshot_20261123-190659.jpg" target="_blank" class="btn">Agrandir le visuel</a>
+            </article>
+
+            <article class="card" data-type="schema">
+                <div>
+                    <span class="badge badge-schema">Visuel & Schéma</span>
+                    <h3>Schéma pédagogique 5</h3>
+                    <img src="image_546ec59d.jpg" alt="Visuel 5" class="schema-img">
+                    <p>Support visuel et illustration de cours.</p>
+                </div>
+                <a href="image_546ec59d.jpg" target="_blank" class="btn">Agrandir le visuel</a>
+            </article>
+
+            <article class="card" data-type="schema">
+                <div>
+                    <span class="badge badge-schema">Visuel & Schéma</span>
+                    <h3>Schéma pédagogique 6</h3>
+                    <img src="image_80e898b2.jpg" alt="Visuel 6" class="schema-img">
+                    <p>Support visuel et illustration de cours.</p>
+                </div>
+                <a href="image_80e898b2.jpg" target="_blank" class="btn">Agrandir le visuel</a>
+            </article>
+
+            <article class="card" data-type="schema">
+                <div>
+                    <span class="badge badge-schema">Visuel & Schéma</span>
+                    <h3>Schéma pédagogique 7</h3>
+                    <img src="image_daa2f9c4.jpg" alt="Visuel 7" class="schema-img">
+                    <p>Support visuel et illustration de cours.</p>
+                </div>
+                <a href="image_daa2f9c4.jpg" target="_blank" class="btn">Agrandir le visuel</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- SECTION EXEMPLE POUR TES FUTURS COURS / DIAS -->
+    <section>
+        <h2>📚 Supports de Cours & Diaporamas (Exemples à compléter)</h2>
+        <div class="grid">
+            <article class="card" data-type="dias">
+                <div>
+                    <span class="badge badge-dias">Diaporama (PPT / Slides)</span>
+                    <h3>Introduction au chapitre</h3>
+                    <p>Support projeté en classe avec graphiques et exemples.</p>
+                </div>
+                <a href="#" class="btn">Ouvrir les dias</a>
+            </article>
+
+            <article class="card" data-type="pdf">
+                <div>
+                    <span class="badge badge-pdf">Fiche de cours (PDF)</span>
+                    <h3>Synthèse & Exercices</h3>
+                    <p>Document PDF à télécharger pour réviser.</p>
+                </div>
+                <a href="#" class="btn">Télécharger le PDF</a>
             </article>
 
             <article class="card" data-type="video">
                 <div>
-                    <span class="badge badge-video">Capsule Vidéo</span>
-                    <h3>Comprendre la limite en 5 min</h3>
-                    <p>Explication vidéo externe et simulation interactive GeoGebra.</p>
+                    <span class="badge badge-video">Capsule Vidéo / Lien</span>
+                    <h3>Simulation interactive</h3>
+                    <p>Ressource complémentaire en ligne.</p>
                 </div>
                 <a href="https://geogebra.org" target="_blank" class="btn">Voir la ressource</a>
             </article>
